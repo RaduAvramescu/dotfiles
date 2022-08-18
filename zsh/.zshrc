@@ -8,7 +8,7 @@ fi
 export PATH=/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Completion system
-autoload -U compinit; compinit
+autoload -U compinit && compinit
 
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
