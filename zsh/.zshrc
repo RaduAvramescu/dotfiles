@@ -7,6 +7,10 @@ fi
 
 export PATH=/usr/local/bin:$HOME/.local/bin:$PATH
 
+SAVEHIST=1000
+HISTSIZE=1000
+HISTFILE=~/.zsh_history
+
 # Completion system
 autoload -U compinit && compinit
 
