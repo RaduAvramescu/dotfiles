@@ -40,7 +40,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#Remove path underlines
+# Remove path underlines
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
