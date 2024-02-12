@@ -29,8 +29,10 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # BT60 keys
-bindkey "^[[H"  beginning-of-line
-bindkey "^[[F"  end-of-line
+bindkey "^[[1;2D" backward-word
+bindkey "^[[1;2C" forward-word
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
