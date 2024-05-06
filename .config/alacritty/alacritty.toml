@@ -10,31 +10,19 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" } # Default for Linux/BSD: "monospace", Regular
+bold = { style = "Bold" } # Inherits family from normal, Default style: Bold
+italic = { style = "Italic" } # Inherits family from normal, Default style: Italic
+bold_italic = { style = "Bold Italic" } # Inherits family from normal, Default style: Bold Italic
+
+# Font size in points
 size = 16.0
 
-[font.bold]
-family = "FiraCode Nerd Font"
-style = "Bold"
+# Offset is extra space around each character
+offset = { x = 0, y = 0 } # Default: x = 0, y = 0
 
-[font.bold_italic]
-family = "FiraCode Nerd Font"
-style = "Bold Italic"
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.italic]
-family = "FiraCode Nerd Font"
-style = "Italic"
-
-[font.normal]
-family = "FiraCode Nerd Font"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
+# Glyph offset determines the locations of the glyphs within their cells
+glyph_offset = { x = 0, y = 0 } # Default: x = 0, y = 0
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -48,11 +36,5 @@ multiplier = 3
 [window]
 decorations = "none"
 opacity = 0.95
-
-[window.dimensions]
-columns = 140
-lines = 38
-
-[window.padding]
-x = 10
-y = 10
+dimensions = { columns = 140, lines = 38 }
+padding = { x = 10, y = 10 }  # Default: x = 0, y = 0
