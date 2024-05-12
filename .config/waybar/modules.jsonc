@@ -64,6 +64,16 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
+    // Idle Inhibitor
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
     // Power Menu
     "custom/powermenu": {
         "format": "",
