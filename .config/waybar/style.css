@@ -1,8 +1,8 @@
 /* Start Colors */
 
 @define-color backgroundlight #1e1e2e;
-@define-color workspaces-background1 rgba(26, 27, 38, 0.6);
-@define-color workspaces-background2 #1a1b26;
+@define-color workspaces-background1 #1a1b26;
+@define-color workspaces-background2 #1f2335;
 @define-color color-primary #7aa2f7;
 @define-color color-secondary #c0caf5;
 @define-color color-urgent #f7768e;
