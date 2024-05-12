@@ -34,7 +34,7 @@
 
     // App Menu Icon
     "custom/appmenuicon": {
-        "format": "",
+        "format": "<span color='#c0caf5'></span>",
         "on-click": "wofi --show drun",
         "tooltip": false
     },
@@ -56,20 +56,20 @@
 
     // Clock
     "clock": {
-        "format": "{:%H:%M %a}",
+        "format": "<span color='#c0caf5'>{:%H:%M %a}</span>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "<span color='#c0caf5'>{:%Y-%m-%d}</span>"
     },
 
     // Network
     "network": {
-        "format": "{ifname}",
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": "Disconnected",
+        "format": "<span color='#c0caf5'>{ifname}</span>",
+        "format-wifi": "  <span color='#c0caf5'>{signalStrength}%</span>",
+        "format-ethernet": " <span color='#c0caf5'>{ifname}</span>",
+        "format-disconnected": "<span color='#c0caf5'>Disconnected</span>",
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nup: {bandwidthUpBits} down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "nm-connection-editor"
@@ -83,27 +83,27 @@
 
     // CPU
     "cpu": {
-        "format": " {usage}%",
+        "format": " <span color='#c0caf5'>{usage}%</span>",
         "on-click": "alacritty -e htop"
     },
 
     // Memory
     "memory": {
-        "format": " {}%",
+        "format": " <span color='#c0caf5'>{}%</span>",
         "on-click": "alacritty -e htop"
     },
 
     // Disk
     "disk": {
         "interval": 30,
-        "format": " {percentage_used}%",
+        "format": " <span color='#c0caf5'>{percentage_used}%</span>",
         "path": "/",
         "on-click": "alacritty -e htop"
     },
 
     // Language
     "hyprland/language": {
-        "format": " {short}"
+        "format": " <span color='#c0caf5'>{short}</span>"
     },
 
     // Group Hardware
@@ -126,11 +126,11 @@
     // PulseAudio
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{icon} <span color='#c0caf5'>{volume}%</span>",
+        "format-bluetooth": "<span color='#c0caf5'>{volume}%</span> {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "<span color='#c0caf5'>{volume}%</span> ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -146,7 +146,7 @@
 
     // Bluetooth
     "bluetooth": {
-        "format": " {status}",
+        "format": " <span color='#c0caf5'>{status}</span>",
         "format-disabled": "",
         "format-off": "",
         "format-no-controller": "",
