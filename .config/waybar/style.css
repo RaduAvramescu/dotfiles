@@ -1,5 +1,6 @@
 /* Start Colors */
 
+@define-color backgroundlight #ffffff;
 @define-color workspacesbackground1 #ffffff;
 @define-color workspacesbackground2 #cccccc;
 @define-color textcolor1 #000000;
@@ -227,6 +228,22 @@ window#waybar.empty #window {
 }
 
 /* End Custom Power Menu */
+
+/* Start Tooltips */
+
+tooltip {
+    opacity: 0.8;
+    background-color: @backgroundlight;
+    margin: 0px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+tooltip label {
+    color: @textcolor2;
+}
+
+/* End Tooltips */
 
 /* Start Other */
 

@@ -43,7 +43,7 @@
     "custom/powermenu": {
         "format": "",
         "on-click": "wlogout",
-        "tooltip": true
+        "tooltip": false
     },
 
 
