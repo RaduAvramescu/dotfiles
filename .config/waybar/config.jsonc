@@ -8,6 +8,7 @@
     "include": ["~/.config/waybar/modules.jsonc"],
 
     "modules-left": [
+        "custom/appmenuicon",
         "hyprland/workspaces"
     ],
 

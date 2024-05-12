@@ -88,11 +88,78 @@ window#waybar.empty #window {
 
 /* End Modules */
 
+/* Start Pulseaudio */
+
+#pulseaudio {
+    font-size: 14px;
+    color: @textcolor;
+    border-radius: 15px;
+    margin: 0px 15px 0px 0px;
+}
+
+#pulseaudio.muted {
+    color: @textcolor;
+}
+
+/* End Pulseaudio */
+
+/* Start Network */
+
+#network {
+    font-size: 14px;
+    color: @textcolor;
+    border-radius: 15px;
+    margin: 0 15px 0px 0px;
+}
+
+#network.ethernet {
+    color: @textcolor;
+}
+
+#network.wifi {
+    color: @textcolor;
+}
+
+/* End Network */
+
+/* Start Hardware Group */
+
+#disk, #memory, #cpu, #language {
+    font-size: 14px;
+    color: @iconcolor;
+    margin: 0px;
+    padding: 0px;
+}
+
+#language {
+    margin-right: 10px;
+}
+
+/* End Hardware Group */
+
+/* Start Bluetooth */
+
+#bluetooth, #bluetooth.on, #bluetooth.connected {
+    font-size: 14px;
+    color: @textcolor;
+    margin: 10px 15px 10px 0px;
+    border-radius: 15px;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* End Bluetooth */
+
 /* Start Idle Inhibitor */
 
 #idle_inhibitor {
     font-size: 16px;
     color: @iconcolor;
+    margin-right: 15px;
 }
 
 #idle_inhibitor.activated {
@@ -102,11 +169,73 @@ window#waybar.empty #window {
 
 /* End Idle Inhibitor */
 
+/* Start Clock */
+
+#clock {
+    font-size: 16px;
+    color: @textcolor;
+    margin: 0px 15px 0px 0px;
+}
+
+/* End Clock */
+
+/* Start Tray */
+
+#tray {
+    margin: 0px 10px 0px 0px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* End Tray */
+
+/* Start Custom System */
+
+#custom-system {
+    font-size: 14px;
+    font-weight: bold;
+    color: @iconcolor;
+    margin-right: 15px;
+}
+
+/* End Custom System */
+
+/* Start Custom App Menu Icon */
+
+#custom-appmenuicon {
+    font-size: 20px;
+    color: @textcolor;
+    margin: 0 15px 0 10px;
+}
+
+/* End Custom App Menu Icon */
+
 /* Start Custom Power Menu */
 
 #custom-powermenu {
     font-size: 16px;
     color: @iconcolor;
+    margin: 0px 20px 0px 0px;
+    padding: 0px;
 }
 
 /* End Custom Power Menu */
+
+/* Start Other */
+
+label:focus {
+    background-color: #000000;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+/* End Other */
