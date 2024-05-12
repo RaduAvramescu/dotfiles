@@ -2,7 +2,7 @@
 {
     "layer": "top", // Waybar at top layer
     "spacing": 0, // Gaps between modules (4px)
-    "margin": "0 20",
+    "margin": "0",
 
     // Load Modules
     "include": ["~/.config/waybar/modules.jsonc"],
