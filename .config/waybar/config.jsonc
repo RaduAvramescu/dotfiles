@@ -20,6 +20,7 @@
         "bluetooth",
         "battery",
         "network",
+        "group/hardware",
         "idle_inhibitor",
         "custom/powermenu",
         "clock",
