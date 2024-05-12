@@ -127,7 +127,7 @@ window#waybar.empty #window {
 #disk, #memory, #cpu, #language {
     font-size: 14px;
     color: @iconcolor;
-    margin: 0px;
+    margin: 0px 10px 0px 0px;
     padding: 0px;
 }
 
@@ -232,10 +232,6 @@ window#waybar.empty #window {
 
 label:focus {
     background-color: #000000;
-}
-
-#backlight {
-    background-color: #90b1b1;
 }
 
 /* End Other */

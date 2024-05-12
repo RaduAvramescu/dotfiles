@@ -22,43 +22,6 @@
         "max-length": 80
     },
 
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-
     // Idle Inhibitor
     "idle_inhibitor": {
         "format": "{icon}",
@@ -83,64 +46,22 @@
         "tooltip": true
     },
 
+
+    // Tray
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
 
+
+    // Clock
     "clock": {
-        // "timezone": "America/New_York",
+        "format": "{:%H:%M %a}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
 
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
-    },
-
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-
+    // Network
     "network": {
         "format": "{ifname}",
         "format-wifi": "  {signalStrength}%",
@@ -153,29 +74,35 @@
         "max-length": 50
     },
 
+    // System
     "custom/system": {
         "format": "",
         "tooltip": false
     },
 
+    // CPU
     "cpu": {
-        "format": " {usage}% "
+        "format": " {usage}%"
     },
 
+    // Memory
     "memory": {
-        "format": " {}% ",
+        "format": " {}%",
     },
 
+    // Disk
     "disk": {
         "interval": 30,
-        "format": " {percentage_used}% ",
+        "format": " {percentage_used}%",
         "path": "/",
     },
 
+    // Language
     "hyprland/language": {
         "format": " {short}"
     },
 
+    // Group Hardware
     "group/hardware": {
         "orientation": "inherit",
         "drawer": {
@@ -192,6 +119,7 @@
         ]
     },
 
+    // PulseAudio
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
@@ -212,6 +140,7 @@
         "on-click": "pavucontrol"
     },
 
+    // Bluetooth
     "bluetooth": {
         "format": " {status}",
         "format-disabled": "",
@@ -220,17 +149,4 @@
         "interval": 30,
         "on-click": "blueman-manager"
     },
-    
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 }

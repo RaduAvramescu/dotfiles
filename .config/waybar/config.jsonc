@@ -19,7 +19,6 @@
     "modules-right": [
         "pulseaudio",
         "bluetooth",
-        "battery",
         "network",
         "group/hardware",
         "idle_inhibitor",
