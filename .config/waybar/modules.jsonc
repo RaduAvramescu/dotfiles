@@ -71,7 +71,8 @@
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
     },
 
     // System
@@ -82,12 +83,14 @@
 
     // CPU
     "cpu": {
-        "format": " {usage}%"
+        "format": " {usage}%",
+        "on-click": "alacritty -e htop"
     },
 
     // Memory
     "memory": {
         "format": " {}%",
+        "on-click": "alacritty -e htop"
     },
 
     // Disk
@@ -95,6 +98,7 @@
         "interval": 30,
         "format": " {percentage_used}%",
         "path": "/",
+        "on-click": "alacritty -e htop"
     },
 
     // Language
