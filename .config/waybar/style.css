@@ -1,3 +1,10 @@
+/* Start Colors */
+
+@define-color iconcolor #ffffff;
+
+/* End Colors */
+
+/* Start General */
 * {
     font-family: 'JetBrainsMono Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 13px;
@@ -14,6 +21,8 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
+
+/* End General */
 
 /*
 window#waybar.empty {
@@ -89,7 +98,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: @iconcolor;
 }
 
 #window,
@@ -241,14 +250,28 @@ label:focus {
     background-color: #eb4d4b;
 }
 
+/* Start Idle Inhibitor */
+
 #idle_inhibitor {
-    background-color: #2d3436;
+    font-size: 16px;
+    color: @iconcolor;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    font-size: 14px;
+    color: #dc2f2f;
 }
+
+/* End Idle Inhibitor */
+
+/* Start Custom Power Menu */
+
+#custom-powermenu {
+    font-size: 16px;
+    color: @iconcolor;
+}
+
+/* End Custom Power Menu */
 
 #mpd {
     background-color: #66cc99;
