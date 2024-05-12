@@ -1,7 +1,7 @@
 /* Start Colors */
 
 @define-color backgroundlight #1e1e2e;
-@define-color workspaces-background1 rgba(0, 0, 0, 1);
+@define-color workspaces-background1 rgba(26, 27, 38, 0.6);
 @define-color workspaces-background2 #1a1b26;
 @define-color color-primary #7aa2f7;
 @define-color color-secondary #c0caf5;
@@ -236,7 +236,7 @@ window#waybar.empty #window {
     font-size: 20px;
     color: @textcolor;
     background: @workspaces-background2;
-    margin: 5px 0px 5px 5px;
+    margin: 5px 0px 5px 10px;
     border-radius: 12px 0px 0px 12px;
     padding: 0px 5px 0px 10px;
 }
