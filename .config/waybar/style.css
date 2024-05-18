@@ -222,6 +222,7 @@ window#waybar.empty #window {
 #custom-swaync {
     font-family: 'JetBrainsMono Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 16px;
+    color: @color-primary;
     background-color: @workspaces-background2;
     margin: 5px 10px 5px 0px;
     border-radius: 0px 12px 12px 0px;
