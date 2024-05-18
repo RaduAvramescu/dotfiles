@@ -10,6 +10,7 @@
 /* End Colors */
 
 /* Start General */
+
 * {
     font-family: 'JetBrainsMono Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-weight: 600;
@@ -201,8 +202,7 @@ window#waybar.empty #window {
 
 #tray {
     background: @workspaces-background2;
-    margin: 5px 10px 5px 0px;
-    border-radius: 0px 12px 12px 0px;
+    margin: 5px 0px 5px 0px;
     padding: 0px 10px 0px 0px;
 }
 
@@ -216,6 +216,19 @@ window#waybar.empty #window {
 }
 
 /* End Tray */
+
+/* Start swaync */
+
+#custom-swaync {
+    font-family: 'JetBrainsMono Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 16px;
+    background-color: @workspaces-background2;
+    margin: 5px 10px 5px 0px;
+    border-radius: 0px 12px 12px 0px;
+    padding: 0px 10px 0px 0px;
+}
+
+/* End swaync */
 
 /* Start Custom System */
 

@@ -24,6 +24,7 @@
         "idle_inhibitor",
         "custom/powermenu",
         "clock",
-        "tray"
+        "tray",
+        "custom/swaync"
     ]
 }
