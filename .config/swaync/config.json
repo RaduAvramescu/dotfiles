@@ -77,7 +77,7 @@
           },
           {
             "label": "󰖩",
-            "command": "iwgtk"
+            "command": "nm-connection-editor"
           },
           {
             "label": "󰂯",

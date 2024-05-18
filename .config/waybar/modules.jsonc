@@ -54,15 +54,14 @@
 
     // Clock
     "clock": {
-        "format": "<span color='#c0caf5'>{:%H:%M %a}</span>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "<span color='#c0caf5'>{:%Y-%m-%d}</span>"
+        "format": " <span color='#c0caf5'>{:%I:%M %p</span>   <span color='#c0caf5'>%D}</span>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     // Network
     "network": {
         "format": "<span color='#c0caf5'>{ifname}</span>",
-        "format-wifi": "  <span color='#c0caf5'>{signalStrength}%</span>",
+        "format-wifi": " <span color='#c0caf5'>{signalStrength}%</span>",
         "format-ethernet": " <span color='#c0caf5'>{ifname}</span>",
         "format-disconnected": "<span color='#c0caf5'>Disconnected</span>",
         "tooltip-format": " {ifname} via {gwaddri}",
@@ -144,7 +143,7 @@
 
     // Bluetooth
     "bluetooth": {
-        "format": " <span color='#c0caf5'>{status}</span>",
+        "format": "",
         "format-disabled": "",
         "format-off": "",
         "format-no-controller": "",
