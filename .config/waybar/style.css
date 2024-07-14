@@ -1,8 +1,7 @@
 /* Start Colors */
 
-@define-color backgroundlight #1e1e2e;
-@define-color workspaces-background1 #1a1b26;
-@define-color workspaces-background2 #1f2335;
+@define-color color-bg-tooltip #1e1e2e;
+@define-color color-bg-workspaces #1f2335;
 @define-color color-primary #7aa2f7;
 @define-color color-secondary #c0caf5;
 @define-color color-urgent #f7768e;
@@ -19,9 +18,9 @@
 }
 
 window#waybar {
-    background-color: @workspaces-background1;
+    background-color: transparent;
     border-bottom: 0px solid #ffffff;
-    padding: 10px;
+    padding: 0px;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -36,19 +35,16 @@ window#waybar.hidden {
 
 #workspaces {
     font-size: 14px;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    border-radius: 0px 12px 12px 0px;
-    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    padding: 0px;
     border: 0px;
 }
 
 #workspaces button {
     color: @color-secondary;
-    background: @workspaces-background2;
-    margin: 5px 5px 5px 0px;
+    margin: 0px;
     border: 0px;
-    padding: 5px;
+    padding: 0px 2px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -59,35 +55,24 @@ window#waybar.hidden {
 
 #workspaces button.urgent {
     color: @color-urgent;
-    background: @workspaces-background2;
 }
 
 #workspaces button:hover {
     color: @color-primary;
-    background: @workspaces-background2;
 }
 
 /* End Workspaces */
 
-/* Start Window */
-
-#window {
-    font-size: 14px;
-    font-weight: normal;
-    color: @color-secondary;
-    background: @workspaces-background2;
-    margin: 5px 15px 5px 0px;
-    padding: 0px 10px;
-    border-radius: 12px;
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
-}
-
-/* End Window */
-
 /* Start Modules */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @color-bg-workspaces;
+    margin: 0px;
+    border-radius: 12px;
+    padding: 6px 12px;
+}
 
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -104,10 +89,8 @@ window#waybar.empty #window {
 #pulseaudio {
     font-size: 14px;
     color: @color-primary;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    border-radius: 12px 0px 0px 12px;
-    padding: 0px 15px 0px 10px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 #pulseaudio.muted {
@@ -121,9 +104,8 @@ window#waybar.empty #window {
 #network {
     font-size: 14px;
     color: @color-primary;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    padding: 0px 15px 0px 0px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 #network.ethernet {
@@ -141,13 +123,13 @@ window#waybar.empty #window {
 #disk, #memory, #cpu, #language {
     font-size: 14px;
     color: @color-primary;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    padding: 0px 10px 0px 0px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 #language {
-    padding: 0px 15px 0px 0px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 /* End Hardware Group */
@@ -156,9 +138,8 @@ window#waybar.empty #window {
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
     font-size: 14px;
-    color: @textcolor;
-    background: @workspaces-background2;
-    margin: 10px 15px 10px 0px;
+    color: @color-primary;
+    margin: 0 12px 0px 0px;
 }
 
 #bluetooth.off {
@@ -174,9 +155,8 @@ window#waybar.empty #window {
 #idle_inhibitor {
     font-size: 16px;
     color: @color-primary;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    padding: 0px 15px 0px 0px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 #idle_inhibitor.activated {
@@ -190,10 +170,9 @@ window#waybar.empty #window {
 
 #clock {
     font-size: 16px;
-    color: @textcolor;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    padding: 0px 15px 0px 0px;
+    color: @color-primary;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* End Clock */
@@ -201,9 +180,8 @@ window#waybar.empty #window {
 /* Start Tray */
 
 #tray {
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    padding: 0px 10px 0px 0px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 #tray > .passive {
@@ -220,13 +198,10 @@ window#waybar.empty #window {
 /* Start swaync */
 
 #custom-swaync {
-    font-family: 'JetBrainsMono Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 16px;
     color: @color-primary;
-    background-color: @workspaces-background2;
-    margin: 5px 10px 5px 0px;
-    border-radius: 0px 12px 12px 0px;
-    padding: 0px 10px 0px 0px;
+    margin: 0px 12px 0px 0px;
+    padding: 0px;
 }
 
 /* End swaync */
@@ -237,8 +212,7 @@ window#waybar.empty #window {
     font-size: 14px;
     font-weight: bold;
     color: @color-primary;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
+    margin: 0px;
     padding: 0px 15px 0px 0px;
 }
 
@@ -249,10 +223,8 @@ window#waybar.empty #window {
 #custom-appmenuicon {
     font-size: 20px;
     color: @textcolor;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 10px;
-    border-radius: 12px 0px 0px 12px;
-    padding: 0px 5px 0px 10px;
+    margin: 0px 10px 0px 0px;
+    padding: 0px;
 }
 
 /* End Custom App Menu Icon */
@@ -262,9 +234,8 @@ window#waybar.empty #window {
 #custom-powermenu {
     font-size: 16px;
     color: @color-primary;
-    background: @workspaces-background2;
-    margin: 5px 0px 5px 0px;
-    padding: 0px 15px 0px 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* End Custom Power Menu */
@@ -273,7 +244,7 @@ window#waybar.empty #window {
 
 tooltip {
     opacity: 0.8;
-    background-color: @backgroundlight;
+    background-color: @color-bg-tooltip;
     margin: 0px;
     border-radius: 10px;
     padding: 20px;
