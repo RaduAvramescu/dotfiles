@@ -54,7 +54,7 @@
           },
           {
             "label": "󰌾",
-            "command": "swaylock-corrupter"
+            "command": "loginctl lock-session"
           },
           {
             "label": "󰍃",
