@@ -35,7 +35,7 @@
     // App Menu Icon
     "custom/appmenuicon": {
         "format": "<span color='#c0caf5'></span>",
-        "on-click": "wofi --show drun",
+        "on-click": "rofi -show drun",
         "tooltip": false
     },
 
