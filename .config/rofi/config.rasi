@@ -1,0 +1,96 @@
+configuration {
+  display-drun: "Applications:";
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 12";
+  modi: "window,run,drun";
+  show-icons: true;
+  icon-theme: "JetBrainsMono Nerd Font";
+  terminal: "alacritty";
+}
+
+* {
+  main-color: #7aa2f7;
+  normal-background: #1a1b26;
+  selected-active-background: #c0caf5;
+  selected-active-foreground: rgba(26, 27, 38, 1);
+}
+
+window {
+  width: 600px;
+  height: 315px;
+  background-color: var(normal-background);
+  border: 2px;
+  border-radius: 10px;
+  border-color: var(main-color);
+}
+
+entry {
+  placeholder: "";
+  text-color: var(main-color);
+}
+
+prompt {
+  text-color: var(main-color);
+}
+
+element {
+  border: 0;
+  padding: 5px;
+}
+
+element normal.normal {
+  background-color: var(normal-background);
+  text-color: var(main-color);
+}
+
+element normal.urgent {
+  background-color: var(normal-background);
+  text-color: var(main-color);
+}
+
+element normal.active {
+  background-color: var(normal-background);
+  text-color: var(main-color);
+}
+
+element selected.normal {
+  background-color: var(main-color);
+  text-color: var(selected-active-foreground);
+}
+
+element alternate.normal {
+  background-color: var(normal-background);
+  text-color: var(main-color);
+}
+
+element alternate.urgent {
+  background-color: var(normal-background);
+  text-color: var(main-color);
+}
+
+element alternate.active {
+  background-color: var(normal-background);
+  text-color: var(main-color);
+}
+
+element-icon {
+  background-color: inherit;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+scrollbar {
+  handle-color: var(main-color);
+}
+
+num-filtered-rows, num-rows {
+    text-color: var(main-color);
+    expand: false;
+}
+
+textbox-num-sep {
+  text-color: var(main-color);
+}
