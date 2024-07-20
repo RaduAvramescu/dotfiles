@@ -42,7 +42,7 @@
     // Power Menu
     "custom/powermenu": {
         "format": "",
-        "on-click": "wlogout",
+        "on-click": "swaync-client -t -sw",
         "tooltip": false
     },
 
