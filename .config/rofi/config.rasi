@@ -1,7 +1,7 @@
 configuration {
-  display-drun: "Applications:";
+  display-drun: "";
   drun-display-format: "{icon} {name}";
-  font: "JetBrainsMono Nerd Font Medium 12";
+  font: "JetBrainsMono Nerd Font Propo Medium 12";
   modi: "window,run,drun";
   show-icons: true;
   icon-theme: "JetBrainsMono Nerd Font";
@@ -11,31 +11,47 @@ configuration {
 * {
   main-color: #7aa2f7;
   normal-background: #1a1b26;
+  secondary-background: #1f2335;
   selected-active-background: #c0caf5;
   selected-active-foreground: rgba(26, 27, 38, 1);
 }
 
 window {
   width: 600px;
-  height: 315px;
   background-color: var(normal-background);
   border: 2px;
   border-radius: 10px;
   border-color: var(main-color);
+  padding: 15px;
+  children: [ horibox ];
+}
+
+horibox {
+  children: [ entry, listview ];
+}
+
+listview {
+  lines: 6;
+  spacing: 5px;
+  margin: 10px 0 0 0;
+  border: 0;
+  scrollbar: false;
 }
 
 entry {
-  placeholder: "";
+  placeholder: " Search";
   text-color: var(main-color);
-}
-
-prompt {
-  text-color: var(main-color);
+  background-color: var(secondary-background);
+  border-radius: 10px;
+  padding: 10px;
+  expand: false;
+  cursor: pointer;
 }
 
 element {
   border: 0;
-  padding: 5px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 element normal.normal {
@@ -75,22 +91,11 @@ element alternate.active {
 
 element-icon {
   background-color: inherit;
+  size: 30px;
 }
 
 element-text {
   background-color: inherit;
   text-color: inherit;
-}
-
-scrollbar {
-  handle-color: var(main-color);
-}
-
-num-filtered-rows, num-rows {
-    text-color: var(main-color);
-    expand: false;
-}
-
-textbox-num-sep {
-  text-color: var(main-color);
+  vertical-align: 0.5;
 }
