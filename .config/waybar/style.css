@@ -150,22 +150,6 @@ window#waybar.hidden {
 
 /* End Bluetooth */
 
-/* Start Idle Inhibitor */
-
-#idle_inhibitor {
-    font-size: 16px;
-    color: @color-primary;
-    margin: 0px 12px 0px 0px;
-    padding: 0px;
-}
-
-#idle_inhibitor.activated {
-    font-size: 14px;
-    color: @color-urgent;
-}
-
-/* End Idle Inhibitor */
-
 /* Start Clock */
 
 #clock {
