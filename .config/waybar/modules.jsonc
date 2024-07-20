@@ -22,16 +22,6 @@
         "max-length": 80
     },
 
-    // Idle Inhibitor
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "tooltip": true,
-        "format-icons":{
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-
     // App Menu Icon
     "custom/appmenuicon": {
         "format": "<span color='#c0caf5'></span>",

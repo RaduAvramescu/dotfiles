@@ -22,7 +22,6 @@
         "bluetooth",
         "network",
         "group/hardware",
-        "idle_inhibitor",
         "custom/swaync",
         "custom/powermenu"
     ]
