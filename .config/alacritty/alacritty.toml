@@ -34,7 +34,7 @@ history = 10000
 multiplier = 3
 
 [window]
-decorations = "none"
+# decorations = "none"
 opacity = 0.95
 dimensions = { columns = 140, lines = 38 }
 padding = { x = 10, y = 10 }  # Default: x = 0, y = 0
