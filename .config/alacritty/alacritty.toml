@@ -3,7 +3,7 @@ import = [
 ]
 
 [shell]
-program = "/bin/fish"
+program = "/usr/bin/fish"
 
 [colors]
 draw_bold_text_with_bright_colors = true
