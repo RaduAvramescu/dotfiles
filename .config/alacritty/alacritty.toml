@@ -4,7 +4,7 @@ import = [
 ]
 
 [terminal.shell]
-program = "/usr/bin/fish"
+program = "/home/linuxbrew/.linuxbrew/bin/fish"
 
 [colors]
 draw_bold_text_with_bright_colors = true
