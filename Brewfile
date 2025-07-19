@@ -1,0 +1,5 @@
+brew "cosign"
+brew "fish"
+brew "starship"
+brew "stow"
+brew "tmux"
