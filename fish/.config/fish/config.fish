@@ -1,4 +1,4 @@
-if test -d /opt/homebrew #MacOS
+if test -d /opt/homebrew # MacOS
     /opt/homebrew/bin/brew shellenv | source
 end
 
