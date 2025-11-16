@@ -1,3 +1,7 @@
+if test -d /opt/homeborew #MacOS
+    /opt/homebrew/bin/brew shellenv | source
+end
+
 if status is-interactive
     # Disable the fish greeting
     set -g fish_greeting
