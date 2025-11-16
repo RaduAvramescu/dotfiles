@@ -1,4 +1,4 @@
-command = /opt/homebrew/bin/fish
+command = /opt/homebrew/bin/fish --login --interactive
 shell-integration = fish
 font-family = JetBrainsMono Nerd Font
 theme = TokyoNight
