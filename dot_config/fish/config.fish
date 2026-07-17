@@ -1,5 +1,9 @@
-if test -d /opt/homebrew # MacOS
+if test -x /opt/homebrew/bin/brew
     /opt/homebrew/bin/brew shellenv | source
+else if test -x /home/linuxbrew/.linuxbrew/bin/brew
+    /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+else if command -q brew
+    brew shellenv | source
 end
 
 if status is-interactive
