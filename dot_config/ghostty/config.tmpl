@@ -2,8 +2,7 @@
 {{- if not $fish -}}
 {{-   fail "fish was not found in PATH; install it before applying dotfiles" -}}
 {{- end -}}
-command = {{ $fish | quote }} --login --interactive
-shell-integration = fish
+command = {{ $fish | quote }}
 font-family = JetBrainsMono Nerd Font
 theme = TokyoNight
 scrollback-limit = 1000000
