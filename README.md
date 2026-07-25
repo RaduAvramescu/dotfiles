@@ -8,6 +8,7 @@ Personal configuration files managed with [chezmoi](https://www.chezmoi.io/).
 - `~/.config/fish/config.fish`
 - `~/.config/ghostty/config`
 - `~/.config/MangoHud/MangoHud.conf` on Linux only
+- `~/.config/mise/config.toml`
 - `~/.config/mpv/input.conf` and `~/.config/mpv/mpv.conf`
 - `~/.config/starship/starship.toml`
 - `~/.config/tmux/tmux.conf`
@@ -36,15 +37,41 @@ for other platforms and installation methods.
 
 The managed Brewfile is rendered for the current platform:
 
+- All supported platforms install mise for managing development tools.
 - macOS installs Bash, Fish, Starship, tmux, Ghostty, and the fonts used by
   Ghostty and the tmux theme.
 - Bluefin uses its system Fish, Starship, and tmux packages. Homebrew remains
-  responsible for chezmoi and cosign. Install Ghostty through the distribution.
+  responsible for chezmoi, cosign, and mise. Install Ghostty through the
+  distribution.
 - Other Linux distributions install Fish, Starship, and tmux through Homebrew.
   Ghostty and terminal fonts remain distribution-managed.
 
 The account login shell does not need to be changed from Bash. Ghostty launches
 Fish directly, and tmux uses Fish as its `default-shell`.
+
+## Development tools
+
+[mise](https://mise.jdx.dev/) manages the global Node.js LTS release and pnpm
+11 on both macOS and Linux. Project-level mise configuration can override these
+defaults, and existing `.nvmrc` files are recognized for Node.js version
+selection.
+
+pnpm global packages use the platform's standard pnpm home directory. Their
+executables are exposed through `$PNPM_HOME/bin`, as required by pnpm 11:
+
+- macOS: `~/Library/pnpm/bin`
+- Linux: `$XDG_DATA_HOME/pnpm/bin` when set, otherwise
+  `~/.local/share/pnpm/bin`
+
+List or install global packages with:
+
+```sh
+pnpm list --global --depth 0
+pnpm add --global <package>
+pnpm bin --global
+```
+
+Do not run `pnpm setup`; chezmoi manages the Fish environment and pnpm paths.
 
 ## Set up a new machine
 
@@ -79,8 +106,17 @@ chezmoi diff
 chezmoi apply
 ```
 
-The final apply also installs the Tokyo Night tmux theme under
-`~/.config/tmux/plugins/tokyo-night-tmux`.
+The final apply installs the Tokyo Night tmux theme under
+`~/.config/tmux/plugins/tokyo-night-tmux` and writes the global mise
+configuration. Install and verify the configured development tools:
+
+```sh
+mise install
+mise doctor
+mise ls --current
+mise exec -- node --version
+mise exec -- pnpm --version
+```
 
 Do not use `chezmoi init --apply` on a machine with existing dotfiles unless
 the resulting changes have already been reviewed.
@@ -108,6 +144,7 @@ Brewfile, Fish, Ghostty, and tmux targets.
 After applying configuration changes:
 
 - Open a new shell for Fish startup changes.
+- Run `mise install` after changing `~/.config/mise/config.toml`.
 - Press `Ctrl+Shift+,` on Linux or `Cmd+Shift+,` on macOS to reload Ghostty.
 - Run `tmux source-file ~/.config/tmux/tmux.conf` to reload tmux.
 - Starship reads its TOML configuration when drawing the prompt.
