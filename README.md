@@ -108,7 +108,7 @@ Brewfile, Fish, Ghostty, and tmux targets.
 After applying configuration changes:
 
 - Open a new shell for Fish startup changes.
-- Press `super+r` in Ghostty to reload its configuration.
+- Press `Ctrl+Shift+,` on Linux or `Cmd+Shift+,` on macOS to reload Ghostty.
 - Run `tmux source-file ~/.config/tmux/tmux.conf` to reload tmux.
 - Starship reads its TOML configuration when drawing the prompt.
 
