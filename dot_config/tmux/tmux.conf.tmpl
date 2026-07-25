@@ -1,0 +1,15 @@
+{{- $fish := lookPath "fish" -}}
+{{- if not $fish -}}
+{{-   fail "fish was not found in PATH; install it before applying dotfiles" -}}
+{{- end -}}
+set -g default-shell {{ $fish | quote }}
+
+set -g mouse on
+set -g focus-events on
+set -g history-limit 50000
+
+set -g @tokyo-night-tmux_window_id_style digital
+set -g @tokyo-night-tmux_pane_id_style hsquare
+set -g @tokyo-night-tmux_zoom_id_style dsquare
+
+run '~/.config/tmux/plugins/tokyo-night-tmux/tokyo-night.tmux'

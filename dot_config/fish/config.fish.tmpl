@@ -1,9 +1,12 @@
-if test -x /opt/homebrew/bin/brew
-    /opt/homebrew/bin/brew shellenv | source
-else if test -x /home/linuxbrew/.linuxbrew/bin/brew
-    /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
-else if command -q brew
-    brew shellenv | source
+{{- $brew := "/home/linuxbrew/.linuxbrew/bin/brew" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{- $brew = "/usr/local/bin/brew" -}}
+{{- if eq .chezmoi.arch "arm64" -}}
+{{- $brew = "/opt/homebrew/bin/brew" -}}
+{{- end -}}
+{{- end -}}
+if not set -q HOMEBREW_PREFIX
+    {{ $brew }} shellenv | source
 end
 
 if status is-interactive
