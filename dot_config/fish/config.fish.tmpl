@@ -9,6 +9,10 @@ if not set -q HOMEBREW_PREFIX
     {{ $brew }} shellenv | source
 end
 
+{{ if eq .chezmoi.os "darwin" -}}
+fish_add_path -gP "$HOME/.local/bin"
+
+{{ end -}}
 begin
     set -l pnpm_global_bin
     if set -q XDG_DATA_HOME
