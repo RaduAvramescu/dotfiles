@@ -56,12 +56,12 @@ Fish directly, and tmux uses Fish as its `default-shell`.
 defaults, and existing `.nvmrc` files are recognized for Node.js version
 selection.
 
-pnpm global packages use the platform's standard pnpm home directory. Their
-executables are exposed through `$PNPM_HOME/bin`, as required by pnpm 11:
+pnpm's storage locations are left at their platform defaults. chezmoi adds the
+default global executable directory to `PATH`:
 
-- macOS: `~/Library/pnpm/bin`
-- Linux: `$XDG_DATA_HOME/pnpm/bin` when set, otherwise
-  `~/.local/share/pnpm/bin`
+- `$XDG_DATA_HOME/pnpm/bin` when `XDG_DATA_HOME` is set
+- `~/Library/pnpm/bin` on macOS otherwise
+- `~/.local/share/pnpm/bin` on Linux otherwise
 
 List or install global packages with:
 

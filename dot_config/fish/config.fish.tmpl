@@ -9,17 +9,22 @@ if not set -q HOMEBREW_PREFIX
     {{ $brew }} shellenv | source
 end
 
-{{ if eq .chezmoi.os "darwin" -}}
-set -gx PNPM_HOME "$HOME/Library/pnpm"
-{{ else if eq .chezmoi.os "linux" -}}
-if set -q XDG_DATA_HOME
-    set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
-else
-    set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-end
-{{ end -}}
-if set -q PNPM_HOME; and not contains -- "$PNPM_HOME/bin" $PATH
-    set -gx PATH "$PNPM_HOME/bin" $PATH
+begin
+    set -l pnpm_global_bin
+    if set -q XDG_DATA_HOME
+        set pnpm_global_bin "$XDG_DATA_HOME/pnpm/bin"
+    {{ if eq .chezmoi.os "darwin" -}}
+    else
+        set pnpm_global_bin "$HOME/Library/pnpm/bin"
+    {{ else if eq .chezmoi.os "linux" -}}
+    else
+        set pnpm_global_bin "$HOME/.local/share/pnpm/bin"
+    {{ end -}}
+    end
+
+    if set -q pnpm_global_bin; and not contains -- "$pnpm_global_bin" $PATH
+        set -gx PATH "$pnpm_global_bin" $PATH
+    end
 end
 
 if status is-interactive
