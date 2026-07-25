@@ -1,4 +1,8 @@
-command = {{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/fish{{ else if eq .chezmoi.os "linux" }}/home/linuxbrew/.linuxbrew/bin/fish{{ else }}fish{{ end }} --login --interactive
+{{- $fish := lookPath "fish" -}}
+{{- if not $fish -}}
+{{-   fail "fish was not found in PATH; install it before applying dotfiles" -}}
+{{- end -}}
+command = {{ $fish | quote }} --login --interactive
 shell-integration = fish
 font-family = JetBrainsMono Nerd Font
 theme = TokyoNight

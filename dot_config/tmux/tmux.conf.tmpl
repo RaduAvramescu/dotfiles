@@ -1,4 +1,8 @@
-set -g default-shell $HOMEBREW_PREFIX/bin/fish
+{{- $fish := lookPath "fish" -}}
+{{- if not $fish -}}
+{{-   fail "fish was not found in PATH; install it before applying dotfiles" -}}
+{{- end -}}
+set -g default-shell {{ $fish | quote }}
 
 set -g @plugin "janoamaral/tokyo-night-tmux"
 
