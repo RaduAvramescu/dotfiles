@@ -1,5 +1,0 @@
-brew "cosign"
-brew "chezmoi"
-brew "fish"
-brew "starship"
-brew "tmux"
