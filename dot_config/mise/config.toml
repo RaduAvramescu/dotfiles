@@ -1,0 +1,6 @@
+[tools]
+node = "lts"
+pnpm = "11"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]

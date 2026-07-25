@@ -9,6 +9,24 @@ if not set -q HOMEBREW_PREFIX
     {{ $brew }} shellenv | source
 end
 
+begin
+    set -l pnpm_global_bin
+    if set -q XDG_DATA_HOME
+        set pnpm_global_bin "$XDG_DATA_HOME/pnpm/bin"
+    {{ if eq .chezmoi.os "darwin" -}}
+    else
+        set pnpm_global_bin "$HOME/Library/pnpm/bin"
+    {{ else if eq .chezmoi.os "linux" -}}
+    else
+        set pnpm_global_bin "$HOME/.local/share/pnpm/bin"
+    {{ end -}}
+    end
+
+    if set -q pnpm_global_bin; and not contains -- "$pnpm_global_bin" $PATH
+        set -gx PATH "$pnpm_global_bin" $PATH
+    end
+end
+
 if status is-interactive
     # Disable the fish greeting
     set -g fish_greeting
@@ -22,4 +40,9 @@ if status is-interactive
     end
     starship init fish | source
     enable_transience
+
+    # Activate mise-managed development tools
+    if command -q mise
+        mise activate fish | source
+    end
 end
