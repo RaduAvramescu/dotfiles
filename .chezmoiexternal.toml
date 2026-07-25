@@ -1,0 +1,6 @@
+[".config/tmux/plugins/tokyo-night-tmux"]
+    type = "git-repo"
+    url = "https://github.com/janoamaral/tokyo-night-tmux.git"
+    refreshPeriod = "168h"
+    [".config/tmux/plugins/tokyo-night-tmux".pull]
+        args = ["--ff-only"]
