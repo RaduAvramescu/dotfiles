@@ -22,11 +22,6 @@ On macOS, install Homebrew first, then install chezmoi:
 brew install chezmoi
 ```
 
-On Linux, install chezmoi through the distribution package manager. The
-[Fedora post-installation setup](https://github.com/RaduAvramescu/fedora-postinstall)
-installs it with DNF on Workstation or layers it with rpm-ostree on Silverblue.
-Reboot after layering packages on Silverblue before applying the dotfiles.
-
 Verify the installation without changing any dotfiles:
 
 ```sh
