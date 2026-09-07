@@ -39,7 +39,7 @@ for other platforms and installation methods.
 
 ## Platform packages
 
-Homebrew is used only on macOS. The macOS Brewfile installs chezmoi, cosign,
+Homebrew is used only on macOS. The macOS Brewfile installs chezmoi,
 mise, Bash, Fish, Starship, tmux, Ghostty, and the terminal fonts.
 
 Linux does not manage a Brewfile or initialize Homebrew. Use distribution

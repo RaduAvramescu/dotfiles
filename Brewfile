@@ -1,4 +1,3 @@
-brew "cosign"
 brew "chezmoi"
 brew "mise"
 
