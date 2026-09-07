@@ -50,23 +50,6 @@ Fish directly, and tmux uses Fish as its `default-shell`.
 defaults, and existing `.nvmrc` files are recognized for Node.js version
 selection.
 
-pnpm's storage locations are left at their platform defaults. chezmoi adds the
-default global executable directory to `PATH`:
-
-- `$XDG_DATA_HOME/pnpm/bin` when `XDG_DATA_HOME` is set
-- `~/Library/pnpm/bin` on macOS otherwise
-- `~/.local/share/pnpm/bin` on Linux otherwise
-
-List or install global packages with:
-
-```sh
-pnpm list --global --depth 0
-pnpm add --global <package>
-pnpm bin --global
-```
-
-Do not run `pnpm setup`; chezmoi manages the Fish environment and pnpm paths.
-
 ## Set up a new machine
 
 Initialize the default chezmoi source directory from GitHub. Use `--ssh` when
