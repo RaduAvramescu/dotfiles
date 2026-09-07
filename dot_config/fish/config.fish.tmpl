@@ -1,35 +1,14 @@
-{{- $brew := "/home/linuxbrew/.linuxbrew/bin/brew" -}}
 {{- if eq .chezmoi.os "darwin" -}}
-{{- $brew = "/usr/local/bin/brew" -}}
+{{- $brew := "/usr/local/bin/brew" -}}
 {{- if eq .chezmoi.arch "arm64" -}}
 {{- $brew = "/opt/homebrew/bin/brew" -}}
-{{- end -}}
 {{- end -}}
 if not set -q HOMEBREW_PREFIX
     {{ $brew }} shellenv | source
 end
 
-{{ if eq .chezmoi.os "darwin" -}}
-fish_add_path -gP "$HOME/.local/bin"
-
 {{ end -}}
-begin
-    set -l pnpm_global_bin
-    if set -q XDG_DATA_HOME
-        set pnpm_global_bin "$XDG_DATA_HOME/pnpm/bin"
-    {{ if eq .chezmoi.os "darwin" -}}
-    else
-        set pnpm_global_bin "$HOME/Library/pnpm/bin"
-    {{ else if eq .chezmoi.os "linux" -}}
-    else
-        set pnpm_global_bin "$HOME/.local/share/pnpm/bin"
-    {{ end -}}
-    end
-
-    if set -q pnpm_global_bin; and not contains -- "$pnpm_global_bin" $PATH
-        set -gx PATH "$pnpm_global_bin" $PATH
-    end
-end
+fish_add_path -gP "$HOME/.local/bin"
 
 if status is-interactive
     # Disable the fish greeting

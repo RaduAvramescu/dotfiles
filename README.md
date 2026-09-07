@@ -4,7 +4,7 @@ Personal configuration files managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Managed files
 
-- `~/Brewfile`
+- `~/Brewfile` on macOS only
 - `~/.config/fish/config.fish`
 - `~/.config/ghostty/config`
 - `~/.config/MangoHud/MangoHud.conf` on Linux only
@@ -16,8 +16,7 @@ Personal configuration files managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Install chezmoi
 
-This repository uses Homebrew for its cross-platform command-line packages.
-Install Homebrew first, then install chezmoi:
+On macOS, install Homebrew first, then install chezmoi:
 
 ```sh
 brew install chezmoi
@@ -35,16 +34,11 @@ for other platforms and installation methods.
 
 ## Platform packages
 
-The managed Brewfile is rendered for the current platform:
+Homebrew is used only on macOS. The macOS Brewfile installs chezmoi,
+mise, Bash, Fish, Starship, tmux, Ghostty, and the terminal fonts.
 
-- All supported platforms install mise for managing development tools.
-- macOS installs Bash, Fish, Starship, tmux, Ghostty, and the fonts used by
-  Ghostty and the tmux theme.
-- Bluefin uses its system Fish, Starship, and tmux packages. Homebrew remains
-  responsible for chezmoi, cosign, and mise. Install Ghostty through the
-  distribution.
-- Other Linux distributions install Fish, Starship, and tmux through Homebrew.
-  Ghostty and terminal fonts remain distribution-managed.
+Fish adds `~/.local/bin` to `PATH` on both platforms so standalone tools such as
+mise are available.
 
 The account login shell does not need to be changed from Bash. Ghostty launches
 Fish directly, and tmux uses Fish as its `default-shell`.
@@ -55,23 +49,6 @@ Fish directly, and tmux uses Fish as its `default-shell`.
 11 on both macOS and Linux. Project-level mise configuration can override these
 defaults, and existing `.nvmrc` files are recognized for Node.js version
 selection.
-
-pnpm's storage locations are left at their platform defaults. chezmoi adds the
-default global executable directory to `PATH`:
-
-- `$XDG_DATA_HOME/pnpm/bin` when `XDG_DATA_HOME` is set
-- `~/Library/pnpm/bin` on macOS otherwise
-- `~/.local/share/pnpm/bin` on Linux otherwise
-
-List or install global packages with:
-
-```sh
-pnpm list --global --depth 0
-pnpm add --global <package>
-pnpm bin --global
-```
-
-Do not run `pnpm setup`; chezmoi manages the Fish environment and pnpm paths.
 
 ## Set up a new machine
 
@@ -88,7 +65,7 @@ Without GitHub SSH access, use HTTPS:
 chezmoi init RaduAvramescu/dotfiles
 ```
 
-Review and apply only the Brewfile first. Installing its packages before
+On macOS, review and apply only the Brewfile first. Installing its packages before
 rendering all targets ensures that the Fish-dependent Ghostty and tmux templates
 can resolve the Fish executable:
 
@@ -98,7 +75,7 @@ chezmoi apply "$HOME/Brewfile"
 brew bundle --file="$HOME/Brewfile"
 ```
 
-Then review and apply the remaining configuration:
+Review and apply the configuration:
 
 ```sh
 chezmoi status
@@ -123,7 +100,7 @@ the resulting changes have already been reviewed.
 
 ## Daily workflow
 
-The Brewfile, Fish, Ghostty, and tmux source files are templates. Use
+The Fish, Ghostty, and tmux source files are templates. Use
 `chezmoi edit --apply` so chezmoi edits the source template and renders the
 target:
 
@@ -139,7 +116,7 @@ chezmoi re-add ~/.config/starship/starship.toml
 ```
 
 `chezmoi re-add` does not update templates. Use `chezmoi edit` for the
-Brewfile, Fish, Ghostty, and tmux targets.
+Fish, Ghostty, and tmux targets. The macOS Brewfile is a normal managed file.
 
 After applying configuration changes:
 
