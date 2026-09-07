@@ -4,7 +4,7 @@ Personal configuration files managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Managed files
 
-- `~/Brewfile`
+- `~/Brewfile` on macOS only
 - `~/.config/fish/config.fish`
 - `~/.config/ghostty/config`
 - `~/.config/MangoHud/MangoHud.conf` on Linux only
@@ -16,12 +16,16 @@ Personal configuration files managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Install chezmoi
 
-This repository uses Homebrew for its cross-platform command-line packages.
-Install Homebrew first, then install chezmoi:
+On macOS, install Homebrew first, then install chezmoi:
 
 ```sh
 brew install chezmoi
 ```
+
+On Linux, install chezmoi through the distribution package manager. The
+[Fedora post-installation setup](https://github.com/RaduAvramescu/fedora-postinstall)
+installs it with DNF on Workstation or layers it with rpm-ostree on Silverblue.
+Reboot after layering packages on Silverblue before applying the dotfiles.
 
 Verify the installation without changing any dotfiles:
 
@@ -35,16 +39,17 @@ for other platforms and installation methods.
 
 ## Platform packages
 
-The managed Brewfile is rendered for the current platform:
+Homebrew is used only on macOS. The macOS Brewfile installs chezmoi, cosign,
+mise, Bash, Fish, Starship, tmux, Ghostty, and the terminal fonts.
 
-- All supported platforms install mise for managing development tools.
-- macOS installs Bash, Fish, Starship, tmux, Ghostty, and the fonts used by
-  Ghostty and the tmux theme.
-- Bluefin uses its system Fish, Starship, and tmux packages. Homebrew remains
-  responsible for chezmoi, cosign, and mise. Install Ghostty through the
-  distribution.
-- Other Linux distributions install Fish, Starship, and tmux through Homebrew.
-  Ghostty and terminal fonts remain distribution-managed.
+Linux does not manage a Brewfile or initialize Homebrew. Use distribution
+packages or standalone installers for the tools you use. The Fedora setup
+installs chezmoi, Fish, Starship, and JetBrains Mono Nerd Font; the Silverblue
+setup also installs mise. Install mise separately on Workstation, and install
+tmux and Ghostty separately if you use their managed configurations.
+
+Fish adds `~/.local/bin` to `PATH` on both platforms so standalone tools such as
+mise are available.
 
 The account login shell does not need to be changed from Bash. Ghostty launches
 Fish directly, and tmux uses Fish as its `default-shell`.
@@ -88,7 +93,7 @@ Without GitHub SSH access, use HTTPS:
 chezmoi init RaduAvramescu/dotfiles
 ```
 
-Review and apply only the Brewfile first. Installing its packages before
+On macOS, review and apply only the Brewfile first. Installing its packages before
 rendering all targets ensures that the Fish-dependent Ghostty and tmux templates
 can resolve the Fish executable:
 
@@ -98,7 +103,10 @@ chezmoi apply "$HOME/Brewfile"
 brew bundle --file="$HOME/Brewfile"
 ```
 
-Then review and apply the remaining configuration:
+On Linux, install Fish and Starship before continuing, along with mise if you
+use the development tool configuration. Skip the Brewfile commands above.
+
+On either platform, review and apply the configuration:
 
 ```sh
 chezmoi status
@@ -123,7 +131,7 @@ the resulting changes have already been reviewed.
 
 ## Daily workflow
 
-The Brewfile, Fish, Ghostty, and tmux source files are templates. Use
+The Fish, Ghostty, and tmux source files are templates. Use
 `chezmoi edit --apply` so chezmoi edits the source template and renders the
 target:
 
@@ -139,7 +147,7 @@ chezmoi re-add ~/.config/starship/starship.toml
 ```
 
 `chezmoi re-add` does not update templates. Use `chezmoi edit` for the
-Brewfile, Fish, Ghostty, and tmux targets.
+Fish, Ghostty, and tmux targets. The macOS Brewfile is a normal managed file.
 
 After applying configuration changes:
 

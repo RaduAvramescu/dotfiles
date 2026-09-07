@@ -2,7 +2,6 @@ brew "cosign"
 brew "chezmoi"
 brew "mise"
 
-{{- if eq .chezmoi.os "darwin" }}
 brew "bash"
 brew "fish"
 brew "starship"
@@ -11,8 +10,3 @@ brew "tmux"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-noto-sans-symbols-2"
 cask "ghostty"
-{{- else if ne .chezmoi.osRelease.id "bluefin" }}
-brew "fish"
-brew "starship"
-brew "tmux"
-{{- end }}

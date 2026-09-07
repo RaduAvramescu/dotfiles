@@ -22,7 +22,6 @@ format = "[ $symbol ]($style)"
 disabled = false
 
 [os.symbols]
-Bluefin = "🐟"
 Fedora = ""
 Linux = "󰌽"
 Macos = "󰀵"
