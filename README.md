@@ -92,10 +92,7 @@ chezmoi apply "$HOME/Brewfile"
 brew bundle --file="$HOME/Brewfile"
 ```
 
-On Linux, install Fish and Starship before continuing, along with mise if you
-use the development tool configuration. Skip the Brewfile commands above.
-
-On either platform, review and apply the configuration:
+Review and apply the configuration:
 
 ```sh
 chezmoi status
