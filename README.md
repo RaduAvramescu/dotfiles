@@ -37,12 +37,6 @@ for other platforms and installation methods.
 Homebrew is used only on macOS. The macOS Brewfile installs chezmoi,
 mise, Bash, Fish, Starship, tmux, Ghostty, and the terminal fonts.
 
-Linux does not manage a Brewfile or initialize Homebrew. Use distribution
-packages or standalone installers for the tools you use. The Fedora setup
-installs chezmoi, Fish, Starship, and JetBrains Mono Nerd Font; the Silverblue
-setup also installs mise. Install mise separately on Workstation, and install
-tmux and Ghostty separately if you use their managed configurations.
-
 Fish adds `~/.local/bin` to `PATH` on both platforms so standalone tools such as
 mise are available.
 
